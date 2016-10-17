@@ -5,7 +5,7 @@ import uglify      from 'rollup-plugin-uglify'
 
 export default {
   entry: 'app/main-aot.js',
-  dest: 'dist/build.js', // output a single application bundle
+  dest: 'aot/dist/build.js', // output a single application bundle
   sourceMap: true,
   sourceMapFile: 'aot/dist/build.js.map',
   format: 'iife',
