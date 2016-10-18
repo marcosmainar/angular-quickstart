@@ -1,5 +1,20 @@
 <button (click)="toggleHeading()">Toggle Heading</button>
-<h1 *ngIf="showHeading">My First Angular App</h1>
+<h1 *ngIf="showHeading">{{title}}</h1>
 
-<h3>List of Heroes</h3>
-<div *ngFor="let hero of heroes">{{hero}}</div>
+<h3>My Heroes</h3>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes" 
+        [class.selected]="hero === selectedHero"
+        (click)="onSelect(hero)">
+         <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+</ul>
+
+<div *ngIf="selectedHero">
+    <h2>{{selectedHero.name}} details!</h2>
+    <div><label>id: </label>{{selectedHero.id}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ngModel)]="selectedHero.name" placeholder="name">
+    </div>
+</div>

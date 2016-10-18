@@ -64,7 +64,6 @@ class _View_AppComponent0 extends import1.AppView<import3.AppComponent> {
   /*private*/ _appEl_8:import2.AppElement;
   _TemplateRef_8_5:any;
   _NgFor_8_6:import11.NgFor;
-  _text_9:any;
   /*private*/ _expr_1:any;
   /*private*/ _expr_2:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
@@ -87,7 +86,6 @@ class _View_AppComponent0 extends import1.AppView<import3.AppComponent> {
     this._appEl_8 = new import2.AppElement(8,(null as any),this,this._anchor_8);
     this._TemplateRef_8_5 = new import12.TemplateRef_(this._appEl_8,viewFactory_AppComponent2);
     this._NgFor_8_6 = new import11.NgFor(this._appEl_8.vcRef,this._TemplateRef_8_5,this.parentInjector.get(import13.IterableDiffers),this.ref);
-    this._text_9 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     var disposable_0:Function = this.renderer.listen(this._el_0,'click',this.eventHandler(this._handle_click_0_0.bind(this)));
     this._expr_1 = import7.UNINITIALIZED;
     this._expr_2 = import7.UNINITIALIZED;
@@ -100,8 +98,7 @@ class _View_AppComponent0 extends import1.AppView<import3.AppComponent> {
       this._el_5,
       this._text_6,
       this._text_7,
-      this._anchor_8,
-      this._text_9
+      this._anchor_8
     ]
     ,[disposable_0],([] as any[]));
     return (null as any);
@@ -146,18 +143,29 @@ export function viewFactory_AppComponent0(viewUtils:import4.ViewUtils,parentInje
 class _View_AppComponent1 extends import1.AppView<any> {
   _el_0:any;
   _text_1:any;
+  /*private*/ _expr_0:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_AppComponent1,renderType_AppComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     this._el_0 = this.renderer.createElement((null as any),'h1',(null as any));
-    this._text_1 = this.renderer.createText(this._el_0,'My First Angular App',(null as any));
+    this._text_1 = this.renderer.createText(this._el_0,'',(null as any));
+    this._expr_0 = import7.UNINITIALIZED;
     this.init(([] as any[]).concat([this._el_0]),[
       this._el_0,
       this._text_1
     ]
     ,([] as any[]),([] as any[]));
     return (null as any);
+  }
+  detectChangesInternal(throwOnChange:boolean):void {
+    this.detectContentChildrenChanges(throwOnChange);
+    const currVal_0:any = import4.interpolate(1,'',this.parent.context.title,'');
+    if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
+      this.renderer.setText(this._text_1,currVal_0);
+      this._expr_0 = currVal_0;
+    }
+    this.detectViewChildrenChanges(throwOnChange);
   }
 }
 function viewFactory_AppComponent1(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {

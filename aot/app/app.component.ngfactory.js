@@ -3,23 +3,24 @@
  * Do not edit.
  */
 /* tslint:disable */
+"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-import * as import1 from '@angular/core/src/linker/view';
-import * as import2 from '@angular/core/src/linker/element';
-import * as import3 from '../../app/app.component';
-import * as import4 from '@angular/core/src/linker/view_utils';
-import * as import6 from '@angular/core/src/linker/view_type';
-import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '@angular/core/src/metadata/view';
-import * as import9 from '@angular/core/src/linker/component_factory';
-import * as import10 from '@angular/common/src/directives/ng_if';
-import * as import11 from '@angular/common/src/directives/ng_for';
-import * as import12 from '@angular/core/src/linker/template_ref';
-import * as import13 from '@angular/core/src/change_detection/differs/iterable_differs';
+var import1 = require('@angular/core/src/linker/view');
+var import2 = require('@angular/core/src/linker/element');
+var import3 = require('../../app/app.component');
+var import4 = require('@angular/core/src/linker/view_utils');
+var import6 = require('@angular/core/src/linker/view_type');
+var import7 = require('@angular/core/src/change_detection/change_detection');
+var import8 = require('@angular/core/src/metadata/view');
+var import9 = require('@angular/core/src/linker/component_factory');
+var import10 = require('@angular/common/src/directives/ng_if');
+var import11 = require('@angular/common/src/directives/ng_for');
+var import12 = require('@angular/core/src/linker/template_ref');
+var import13 = require('@angular/core/src/change_detection/differs/iterable_differs');
 var renderType_AppComponent_Host = null;
 var _View_AppComponent_Host0 = (function (_super) {
     __extends(_View_AppComponent_Host0, _super);
@@ -50,7 +51,7 @@ function viewFactory_AppComponent_Host0(viewUtils, parentInjector, declarationEl
     }
     return new _View_AppComponent_Host0(viewUtils, parentInjector, declarationEl);
 }
-export var AppComponentNgFactory = new import9.ComponentFactory('my-app', viewFactory_AppComponent_Host0, import3.AppComponent);
+exports.AppComponentNgFactory = new import9.ComponentFactory('my-app', viewFactory_AppComponent_Host0, import3.AppComponent);
 var styles_AppComponent = [];
 var renderType_AppComponent = null;
 var _View_AppComponent0 = (function (_super) {
@@ -75,7 +76,6 @@ var _View_AppComponent0 = (function (_super) {
         this._appEl_8 = new import2.AppElement(8, null, this, this._anchor_8);
         this._TemplateRef_8_5 = new import12.TemplateRef_(this._appEl_8, viewFactory_AppComponent2);
         this._NgFor_8_6 = new import11.NgFor(this._appEl_8.vcRef, this._TemplateRef_8_5, this.parentInjector.get(import13.IterableDiffers), this.ref);
-        this._text_9 = this.renderer.createText(parentRenderNode, '\n', null);
         var disposable_0 = this.renderer.listen(this._el_0, 'click', this.eventHandler(this._handle_click_0_0.bind(this)));
         this._expr_1 = import7.UNINITIALIZED;
         this._expr_2 = import7.UNINITIALIZED;
@@ -88,8 +88,7 @@ var _View_AppComponent0 = (function (_super) {
             this._el_5,
             this._text_6,
             this._text_7,
-            this._anchor_8,
-            this._text_9
+            this._anchor_8
         ], [disposable_0], []);
         return null;
     };
@@ -141,12 +140,13 @@ var _View_AppComponent0 = (function (_super) {
     };
     return _View_AppComponent0;
 }(import1.AppView));
-export function viewFactory_AppComponent0(viewUtils, parentInjector, declarationEl) {
+function viewFactory_AppComponent0(viewUtils, parentInjector, declarationEl) {
     if ((renderType_AppComponent === null)) {
         (renderType_AppComponent = viewUtils.createRenderComponentType('', 0, import8.ViewEncapsulation.None, styles_AppComponent, {}));
     }
     return new _View_AppComponent0(viewUtils, parentInjector, declarationEl);
 }
+exports.viewFactory_AppComponent0 = viewFactory_AppComponent0;
 var _View_AppComponent1 = (function (_super) {
     __extends(_View_AppComponent1, _super);
     function _View_AppComponent1(viewUtils, parentInjector, declarationEl) {
@@ -154,12 +154,22 @@ var _View_AppComponent1 = (function (_super) {
     }
     _View_AppComponent1.prototype.createInternal = function (rootSelector) {
         this._el_0 = this.renderer.createElement(null, 'h1', null);
-        this._text_1 = this.renderer.createText(this._el_0, 'My First Angular App', null);
+        this._text_1 = this.renderer.createText(this._el_0, '', null);
+        this._expr_0 = import7.UNINITIALIZED;
         this.init([].concat([this._el_0]), [
             this._el_0,
             this._text_1
         ], [], []);
         return null;
+    };
+    _View_AppComponent1.prototype.detectChangesInternal = function (throwOnChange) {
+        this.detectContentChildrenChanges(throwOnChange);
+        var currVal_0 = import4.interpolate(1, '', this.parent.context.title, '');
+        if (import4.checkBinding(throwOnChange, this._expr_0, currVal_0)) {
+            this.renderer.setText(this._text_1, currVal_0);
+            this._expr_0 = currVal_0;
+        }
+        this.detectViewChildrenChanges(throwOnChange);
     };
     return _View_AppComponent1;
 }(import1.AppView));
