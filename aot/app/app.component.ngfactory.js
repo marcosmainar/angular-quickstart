@@ -18,9 +18,10 @@ var import7 = require('@angular/core/src/change_detection/change_detection');
 var import8 = require('@angular/core/src/metadata/view');
 var import9 = require('@angular/core/src/linker/component_factory');
 var import10 = require('@angular/common/src/directives/ng_if');
-var import11 = require('@angular/common/src/directives/ng_for');
-var import12 = require('@angular/core/src/linker/template_ref');
-var import13 = require('@angular/core/src/change_detection/differs/iterable_differs');
+var import11 = require('../../app/hero.service');
+var import12 = require('../../app/heroes.component');
+var import13 = require('@angular/core/src/linker/template_ref');
+var import14 = require('./heroes.component.ngfactory');
 var renderType_AppComponent_Host = null;
 var _View_AppComponent_Host0 = (function (_super) {
     __extends(_View_AppComponent_Host0, _super);
@@ -66,69 +67,51 @@ var _View_AppComponent0 = (function (_super) {
         this._text_2 = this.renderer.createText(parentRenderNode, '\n', null);
         this._anchor_3 = this.renderer.createTemplateAnchor(parentRenderNode, null);
         this._appEl_3 = new import2.AppElement(3, null, this, this._anchor_3);
-        this._TemplateRef_3_5 = new import12.TemplateRef_(this._appEl_3, viewFactory_AppComponent1);
+        this._TemplateRef_3_5 = new import13.TemplateRef_(this._appEl_3, viewFactory_AppComponent1);
         this._NgIf_3_6 = new import10.NgIf(this._appEl_3.vcRef, this._TemplateRef_3_5);
         this._text_4 = this.renderer.createText(parentRenderNode, '\n\n', null);
-        this._el_5 = this.renderer.createElement(parentRenderNode, 'h3', null);
-        this._text_6 = this.renderer.createText(this._el_5, 'List of Heroes', null);
-        this._text_7 = this.renderer.createText(parentRenderNode, '\n', null);
-        this._anchor_8 = this.renderer.createTemplateAnchor(parentRenderNode, null);
-        this._appEl_8 = new import2.AppElement(8, null, this, this._anchor_8);
-        this._TemplateRef_8_5 = new import12.TemplateRef_(this._appEl_8, viewFactory_AppComponent2);
-        this._NgFor_8_6 = new import11.NgFor(this._appEl_8.vcRef, this._TemplateRef_8_5, this.parentInjector.get(import13.IterableDiffers), this.ref);
+        this._el_5 = this.renderer.createElement(parentRenderNode, 'my-heroes', null);
+        this._appEl_5 = new import2.AppElement(5, null, this, this._el_5);
+        var compView_5 = import14.viewFactory_HeroesComponent0(this.viewUtils, this.injector(5), this._appEl_5);
+        this._HeroService_5_4 = new import11.HeroService();
+        this._HeroesComponent_5_5 = new import12.HeroesComponent(this._HeroService_5_4);
+        this._appEl_5.initComponent(this._HeroesComponent_5_5, [], compView_5);
+        compView_5.create(this._HeroesComponent_5_5, [], null);
         var disposable_0 = this.renderer.listen(this._el_0, 'click', this.eventHandler(this._handle_click_0_0.bind(this)));
         this._expr_1 = import7.UNINITIALIZED;
-        this._expr_2 = import7.UNINITIALIZED;
         this.init([], [
             this._el_0,
             this._text_1,
             this._text_2,
             this._anchor_3,
             this._text_4,
-            this._el_5,
-            this._text_6,
-            this._text_7,
-            this._anchor_8
+            this._el_5
         ], [disposable_0], []);
         return null;
     };
     _View_AppComponent0.prototype.injectorGetInternal = function (token, requestNodeIndex, notFoundResult) {
-        if (((token === import12.TemplateRef) && (3 === requestNodeIndex))) {
+        if (((token === import13.TemplateRef) && (3 === requestNodeIndex))) {
             return this._TemplateRef_3_5;
         }
         if (((token === import10.NgIf) && (3 === requestNodeIndex))) {
             return this._NgIf_3_6;
         }
-        if (((token === import12.TemplateRef) && (8 === requestNodeIndex))) {
-            return this._TemplateRef_8_5;
+        if (((token === import11.HeroService) && (5 === requestNodeIndex))) {
+            return this._HeroService_5_4;
         }
-        if (((token === import11.NgFor) && (8 === requestNodeIndex))) {
-            return this._NgFor_8_6;
+        if (((token === import12.HeroesComponent) && (5 === requestNodeIndex))) {
+            return this._HeroesComponent_5_5;
         }
         return notFoundResult;
     };
     _View_AppComponent0.prototype.detectChangesInternal = function (throwOnChange) {
-        var changes = null;
         var currVal_1 = this.context.showHeading;
         if (import4.checkBinding(throwOnChange, this._expr_1, currVal_1)) {
             this._NgIf_3_6.ngIf = currVal_1;
             this._expr_1 = currVal_1;
         }
-        changes = null;
-        var currVal_2 = this.context.heroes;
-        if (import4.checkBinding(throwOnChange, this._expr_2, currVal_2)) {
-            this._NgFor_8_6.ngForOf = currVal_2;
-            if ((changes === null)) {
-                (changes = {});
-            }
-            changes['ngForOf'] = new import7.SimpleChange(this._expr_2, currVal_2);
-            this._expr_2 = currVal_2;
-        }
-        if ((changes !== null)) {
-            this._NgFor_8_6.ngOnChanges(changes);
-        }
-        if (!throwOnChange) {
-            this._NgFor_8_6.ngDoCheck();
+        if (((this.numberOfChecks === 0) && !throwOnChange)) {
+            this._HeroesComponent_5_5.ngOnInit();
         }
         this.detectContentChildrenChanges(throwOnChange);
         this.detectViewChildrenChanges(throwOnChange);
@@ -175,34 +158,5 @@ var _View_AppComponent1 = (function (_super) {
 }(import1.AppView));
 function viewFactory_AppComponent1(viewUtils, parentInjector, declarationEl) {
     return new _View_AppComponent1(viewUtils, parentInjector, declarationEl);
-}
-var _View_AppComponent2 = (function (_super) {
-    __extends(_View_AppComponent2, _super);
-    function _View_AppComponent2(viewUtils, parentInjector, declarationEl) {
-        _super.call(this, _View_AppComponent2, renderType_AppComponent, import6.ViewType.EMBEDDED, viewUtils, parentInjector, declarationEl, import7.ChangeDetectorStatus.CheckAlways);
-    }
-    _View_AppComponent2.prototype.createInternal = function (rootSelector) {
-        this._el_0 = this.renderer.createElement(null, 'div', null);
-        this._text_1 = this.renderer.createText(this._el_0, '', null);
-        this._expr_0 = import7.UNINITIALIZED;
-        this.init([].concat([this._el_0]), [
-            this._el_0,
-            this._text_1
-        ], [], []);
-        return null;
-    };
-    _View_AppComponent2.prototype.detectChangesInternal = function (throwOnChange) {
-        this.detectContentChildrenChanges(throwOnChange);
-        var currVal_0 = import4.interpolate(1, '', this.context.$implicit, '');
-        if (import4.checkBinding(throwOnChange, this._expr_0, currVal_0)) {
-            this.renderer.setText(this._text_1, currVal_0);
-            this._expr_0 = currVal_0;
-        }
-        this.detectViewChildrenChanges(throwOnChange);
-    };
-    return _View_AppComponent2;
-}(import1.AppView));
-function viewFactory_AppComponent2(viewUtils, parentInjector, declarationEl) {
-    return new _View_AppComponent2(viewUtils, parentInjector, declarationEl);
 }
 //# sourceMappingURL=app.component.ngfactory.js.map
