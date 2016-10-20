@@ -12,12 +12,8 @@ var core_1 = require('@angular/core');
 // import 'rxjs/Rx'; // load the full rxjs
 var AppComponent = (function () {
     function AppComponent() {
-        this.showHeading = true;
-        this.title = 'Tour of Heroes';
+        this.subtitle = '(v1)';
     }
-    AppComponent.prototype.toggleHeading = function () {
-        this.showHeading = !this.showHeading;
-    };
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

@@ -14,11 +14,24 @@ import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
 import * as import8 from '@angular/core/src/metadata/view';
 import * as import9 from '@angular/core/src/linker/component_factory';
-import * as import10 from '@angular/common/src/directives/ng_if';
-import * as import11 from '../../app/hero.service';
-import * as import12 from '../../app/heroes.component';
-import * as import13 from '@angular/core/src/linker/template_ref';
-import * as import14 from './heroes.component.ngfactory';
+import * as import10 from './app.component.css.shim';
+import * as import11 from '../../app/title.component';
+import * as import12 from '../../app/contact/contact.component';
+import * as import13 from '@angular/router/src/directives/router_link';
+import * as import14 from '@angular/router/src/directives/router_link_active';
+import * as import15 from '@angular/core/src/linker/query_list';
+import * as import16 from '@angular/router/src/directives/router_outlet';
+import * as import17 from './title.component.ngfactory';
+import * as import18 from '../../app/user.service';
+import * as import19 from './contact/contact.component.ngfactory';
+import * as import20 from '../../app/contact/contact.service';
+import * as import21 from '@angular/router/src/router';
+import * as import22 from '@angular/router/src/router_state';
+import * as import23 from '@angular/common/src/location/location_strategy';
+import * as import24 from '@angular/core/src/linker/element_ref';
+import * as import25 from '@angular/router/src/router_outlet_map';
+import * as import26 from '@angular/core/src/linker/component_factory_resolver';
+import * as import27 from '@angular/core/src/security';
 var renderType_AppComponent_Host:import0.RenderComponentType = (null as any);
 class _View_AppComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -47,110 +60,229 @@ function viewFactory_AppComponent_Host0(viewUtils:import4.ViewUtils,parentInject
   return new _View_AppComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
 export const AppComponentNgFactory:import9.ComponentFactory<import3.AppComponent> = new import9.ComponentFactory<import3.AppComponent>('my-app',viewFactory_AppComponent_Host0,import3.AppComponent);
-const styles_AppComponent:any[] = ([] as any[]);
+const styles_AppComponent:any[] = [import10.styles];
 var renderType_AppComponent:import0.RenderComponentType = (null as any);
 class _View_AppComponent0 extends import1.AppView<import3.AppComponent> {
   _el_0:any;
+  /*private*/ _appEl_0:import2.AppElement;
+  _TitleComponent_0_4:import11.TitleComponent;
   _text_1:any;
-  _text_2:any;
-  _anchor_3:any;
-  /*private*/ _appEl_3:import2.AppElement;
-  _TemplateRef_3_5:any;
-  _NgIf_3_6:import10.NgIf;
-  _text_4:any;
-  _el_5:any;
-  /*private*/ _appEl_5:import2.AppElement;
-  _HeroService_5_4:import11.HeroService;
-  _HeroesComponent_5_5:import12.HeroesComponent;
-  /*private*/ _expr_1:any;
+  _el_2:any;
+  /*private*/ _appEl_2:import2.AppElement;
+  _ContactComponent_2_4:import12.ContactComponent;
+  _text_3:any;
+  _el_4:any;
+  _text_5:any;
+  _el_6:any;
+  _RouterLinkWithHref_6_3:import13.RouterLinkWithHref;
+  _RouterLinkActive_6_4:import14.RouterLinkActive;
+  _query_RouterLink_6_0:import15.QueryList<any>;
+  _query_RouterLinkWithHref_6_1:import15.QueryList<any>;
+  _text_7:any;
+  _text_8:any;
+  _el_9:any;
+  _RouterLinkWithHref_9_3:import13.RouterLinkWithHref;
+  _RouterLinkActive_9_4:import14.RouterLinkActive;
+  _query_RouterLink_9_0:import15.QueryList<any>;
+  _query_RouterLinkWithHref_9_1:import15.QueryList<any>;
+  _text_10:any;
+  _text_11:any;
+  _text_12:any;
+  _el_13:any;
+  /*private*/ _appEl_13:import2.AppElement;
+  _RouterOutlet_13_5:import16.RouterOutlet;
+  /*private*/ _expr_0:any;
+  /*private*/ _expr_2:any;
+  /*private*/ _expr_3:any;
+  /*private*/ _expr_4:any;
+  /*private*/ _expr_6:any;
+  /*private*/ _expr_7:any;
+  /*private*/ _expr_8:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
     super(_View_AppComponent0,renderType_AppComponent,import6.ViewType.COMPONENT,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
   }
   createInternal(rootSelector:string):import2.AppElement {
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
-    this._el_0 = this.renderer.createElement(parentRenderNode,'button',(null as any));
-    this._text_1 = this.renderer.createText(this._el_0,'Toggle Heading',(null as any));
-    this._text_2 = this.renderer.createText(parentRenderNode,'\n',(null as any));
-    this._anchor_3 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
-    this._appEl_3 = new import2.AppElement(3,(null as any),this,this._anchor_3);
-    this._TemplateRef_3_5 = new import13.TemplateRef_(this._appEl_3,viewFactory_AppComponent1);
-    this._NgIf_3_6 = new import10.NgIf(this._appEl_3.vcRef,this._TemplateRef_3_5);
-    this._text_4 = this.renderer.createText(parentRenderNode,'\n\n',(null as any));
-    this._el_5 = this.renderer.createElement(parentRenderNode,'my-heroes',(null as any));
-    this._appEl_5 = new import2.AppElement(5,(null as any),this,this._el_5);
-    var compView_5:any = import14.viewFactory_HeroesComponent0(this.viewUtils,this.injector(5),this._appEl_5);
-    this._HeroService_5_4 = new import11.HeroService();
-    this._HeroesComponent_5_5 = new import12.HeroesComponent(this._HeroService_5_4);
-    this._appEl_5.initComponent(this._HeroesComponent_5_5,([] as any[]),compView_5);
-    compView_5.create(this._HeroesComponent_5_5,([] as any[]),(null as any));
-    var disposable_0:Function = this.renderer.listen(this._el_0,'click',this.eventHandler(this._handle_click_0_0.bind(this)));
-    this._expr_1 = import7.UNINITIALIZED;
+    this._el_0 = this.renderer.createElement(parentRenderNode,'app-title',(null as any));
+    this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
+    var compView_0:any = import17.viewFactory_TitleComponent0(this.viewUtils,this.injector(0),this._appEl_0);
+    this._TitleComponent_0_4 = new import11.TitleComponent(this.parentInjector.get(import18.UserService));
+    this._appEl_0.initComponent(this._TitleComponent_0_4,([] as any[]),compView_0);
+    compView_0.create(this._TitleComponent_0_4,([] as any[]),(null as any));
+    this._text_1 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_2 = this.renderer.createElement(parentRenderNode,'app-contact',(null as any));
+    this._appEl_2 = new import2.AppElement(2,(null as any),this,this._el_2);
+    var compView_2:any = import19.viewFactory_ContactComponent0(this.viewUtils,this.injector(2),this._appEl_2);
+    this._ContactComponent_2_4 = new import12.ContactComponent(this.parentInjector.get(import20.ContactService),this.parentInjector.get(import18.UserService));
+    this._appEl_2.initComponent(this._ContactComponent_2_4,([] as any[]),compView_2);
+    compView_2.create(this._ContactComponent_2_4,([] as any[]),(null as any));
+    this._text_3 = this.renderer.createText(parentRenderNode,'\n\n',(null as any));
+    this._el_4 = this.renderer.createElement(parentRenderNode,'nav',(null as any));
+    this._text_5 = this.renderer.createText(this._el_4,'\n    ',(null as any));
+    this._el_6 = this.renderer.createElement(this._el_4,'a',(null as any));
+    this.renderer.setElementAttribute(this._el_6,'routerLink','/dashboard');
+    this.renderer.setElementAttribute(this._el_6,'routerLinkActive','active');
+    this._RouterLinkWithHref_6_3 = new import13.RouterLinkWithHref(this.parentInjector.get(import21.Router),this.parentInjector.get(import22.ActivatedRoute),this.parentInjector.get(import23.LocationStrategy));
+    this._RouterLinkActive_6_4 = new import14.RouterLinkActive(this.parentInjector.get(import21.Router),new import24.ElementRef(this._el_6),this.renderer);
+    this._query_RouterLink_6_0 = new import15.QueryList<any>();
+    this._query_RouterLinkWithHref_6_1 = new import15.QueryList<any>();
+    this._text_7 = this.renderer.createText(this._el_6,'Dashboard',(null as any));
+    this._text_8 = this.renderer.createText(this._el_4,'\n    ',(null as any));
+    this._el_9 = this.renderer.createElement(this._el_4,'a',(null as any));
+    this.renderer.setElementAttribute(this._el_9,'routerLink','/heroes');
+    this.renderer.setElementAttribute(this._el_9,'routerLinkActive','active');
+    this._RouterLinkWithHref_9_3 = new import13.RouterLinkWithHref(this.parentInjector.get(import21.Router),this.parentInjector.get(import22.ActivatedRoute),this.parentInjector.get(import23.LocationStrategy));
+    this._RouterLinkActive_9_4 = new import14.RouterLinkActive(this.parentInjector.get(import21.Router),new import24.ElementRef(this._el_9),this.renderer);
+    this._query_RouterLink_9_0 = new import15.QueryList<any>();
+    this._query_RouterLinkWithHref_9_1 = new import15.QueryList<any>();
+    this._text_10 = this.renderer.createText(this._el_9,'Heroes',(null as any));
+    this._text_11 = this.renderer.createText(this._el_4,'\n',(null as any));
+    this._text_12 = this.renderer.createText(parentRenderNode,'\n',(null as any));
+    this._el_13 = this.renderer.createElement(parentRenderNode,'router-outlet',(null as any));
+    this._appEl_13 = new import2.AppElement(13,(null as any),this,this._el_13);
+    this._RouterOutlet_13_5 = new import16.RouterOutlet(this.parentInjector.get(import25.RouterOutletMap),this._appEl_13.vcRef,this.parentInjector.get(import26.ComponentFactoryResolver),(null as any));
+    this._expr_0 = import7.UNINITIALIZED;
+    var disposable_0:Function = this.renderer.listen(this._el_6,'click',this.eventHandler(this._handle_click_6_0.bind(this)));
+    this._expr_2 = import7.UNINITIALIZED;
+    this._expr_3 = import7.UNINITIALIZED;
+    this._expr_4 = import7.UNINITIALIZED;
+    var disposable_1:Function = this.renderer.listen(this._el_9,'click',this.eventHandler(this._handle_click_9_0.bind(this)));
+    this._expr_6 = import7.UNINITIALIZED;
+    this._expr_7 = import7.UNINITIALIZED;
+    this._expr_8 = import7.UNINITIALIZED;
     this.init(([] as any[]),[
       this._el_0,
       this._text_1,
-      this._text_2,
-      this._anchor_3,
-      this._text_4,
-      this._el_5
+      this._el_2,
+      this._text_3,
+      this._el_4,
+      this._text_5,
+      this._el_6,
+      this._text_7,
+      this._text_8,
+      this._el_9,
+      this._text_10,
+      this._text_11,
+      this._text_12,
+      this._el_13
     ]
-    ,[disposable_0],([] as any[]));
+    ,[
+      disposable_0,
+      disposable_1
+    ]
+    ,([] as any[]));
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import13.TemplateRef) && (3 === requestNodeIndex))) { return this._TemplateRef_3_5; }
-    if (((token === import10.NgIf) && (3 === requestNodeIndex))) { return this._NgIf_3_6; }
-    if (((token === import11.HeroService) && (5 === requestNodeIndex))) { return this._HeroService_5_4; }
-    if (((token === import12.HeroesComponent) && (5 === requestNodeIndex))) { return this._HeroesComponent_5_5; }
+    if (((token === import11.TitleComponent) && (0 === requestNodeIndex))) { return this._TitleComponent_0_4; }
+    if (((token === import12.ContactComponent) && (2 === requestNodeIndex))) { return this._ContactComponent_2_4; }
+    if (((token === import13.RouterLinkWithHref) && ((6 <= requestNodeIndex) && (requestNodeIndex <= 7)))) { return this._RouterLinkWithHref_6_3; }
+    if (((token === import14.RouterLinkActive) && ((6 <= requestNodeIndex) && (requestNodeIndex <= 7)))) { return this._RouterLinkActive_6_4; }
+    if (((token === import13.RouterLinkWithHref) && ((9 <= requestNodeIndex) && (requestNodeIndex <= 10)))) { return this._RouterLinkWithHref_9_3; }
+    if (((token === import14.RouterLinkActive) && ((9 <= requestNodeIndex) && (requestNodeIndex <= 10)))) { return this._RouterLinkActive_9_4; }
+    if (((token === import16.RouterOutlet) && (13 === requestNodeIndex))) { return this._RouterOutlet_13_5; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
-    const currVal_1:any = this.context.showHeading;
-    if (import4.checkBinding(throwOnChange,this._expr_1,currVal_1)) {
-      this._NgIf_3_6.ngIf = currVal_1;
-      this._expr_1 = currVal_1;
+    var changes:{[key: string]:import7.SimpleChange} = (null as any);
+    const currVal_0:any = this.context.subtitle;
+    if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
+      this._TitleComponent_0_4.subtitle = currVal_0;
+      this._expr_0 = currVal_0;
     }
-    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._HeroesComponent_5_5.ngOnInit(); }
+    if (((this.numberOfChecks === 0) && !throwOnChange)) { this._ContactComponent_2_4.ngOnInit(); }
+    changes = (null as any);
+    const currVal_2:any = '/dashboard';
+    if (import4.checkBinding(throwOnChange,this._expr_2,currVal_2)) {
+      this._RouterLinkWithHref_6_3.routerLink = currVal_2;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['routerLink'] = new import7.SimpleChange(this._expr_2,currVal_2);
+      this._expr_2 = currVal_2;
+    }
+    if ((changes !== (null as any))) { this._RouterLinkWithHref_6_3.ngOnChanges(changes); }
+    changes = (null as any);
+    const currVal_4:any = 'active';
+    if (import4.checkBinding(throwOnChange,this._expr_4,currVal_4)) {
+      this._RouterLinkActive_6_4.routerLinkActive = currVal_4;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['routerLinkActive'] = new import7.SimpleChange(this._expr_4,currVal_4);
+      this._expr_4 = currVal_4;
+    }
+    if ((changes !== (null as any))) { this._RouterLinkActive_6_4.ngOnChanges(changes); }
+    changes = (null as any);
+    const currVal_6:any = '/heroes';
+    if (import4.checkBinding(throwOnChange,this._expr_6,currVal_6)) {
+      this._RouterLinkWithHref_9_3.routerLink = currVal_6;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['routerLink'] = new import7.SimpleChange(this._expr_6,currVal_6);
+      this._expr_6 = currVal_6;
+    }
+    if ((changes !== (null as any))) { this._RouterLinkWithHref_9_3.ngOnChanges(changes); }
+    changes = (null as any);
+    const currVal_8:any = 'active';
+    if (import4.checkBinding(throwOnChange,this._expr_8,currVal_8)) {
+      this._RouterLinkActive_9_4.routerLinkActive = currVal_8;
+      if ((changes === (null as any))) { (changes = {}); }
+      changes['routerLinkActive'] = new import7.SimpleChange(this._expr_8,currVal_8);
+      this._expr_8 = currVal_8;
+    }
+    if ((changes !== (null as any))) { this._RouterLinkActive_9_4.ngOnChanges(changes); }
     this.detectContentChildrenChanges(throwOnChange);
+    if (!throwOnChange) {
+      if (this._query_RouterLink_6_0.dirty) {
+        this._query_RouterLink_6_0.reset(([] as any[]));
+        this._RouterLinkActive_6_4.links = this._query_RouterLink_6_0;
+        this._query_RouterLink_6_0.notifyOnChanges();
+      }
+      if (this._query_RouterLinkWithHref_6_1.dirty) {
+        this._query_RouterLinkWithHref_6_1.reset([this._RouterLinkWithHref_6_3]);
+        this._RouterLinkActive_6_4.linksWithHrefs = this._query_RouterLinkWithHref_6_1;
+        this._query_RouterLinkWithHref_6_1.notifyOnChanges();
+      }
+      if (this._query_RouterLink_9_0.dirty) {
+        this._query_RouterLink_9_0.reset(([] as any[]));
+        this._RouterLinkActive_9_4.links = this._query_RouterLink_9_0;
+        this._query_RouterLink_9_0.notifyOnChanges();
+      }
+      if (this._query_RouterLinkWithHref_9_1.dirty) {
+        this._query_RouterLinkWithHref_9_1.reset([this._RouterLinkWithHref_9_3]);
+        this._RouterLinkActive_9_4.linksWithHrefs = this._query_RouterLinkWithHref_9_1;
+        this._query_RouterLinkWithHref_9_1.notifyOnChanges();
+      }
+      if ((this.numberOfChecks === 0)) { this._RouterLinkActive_6_4.ngAfterContentInit(); }
+      if ((this.numberOfChecks === 0)) { this._RouterLinkActive_9_4.ngAfterContentInit(); }
+    }
+    const currVal_3:any = this._RouterLinkWithHref_6_3.href;
+    if (import4.checkBinding(throwOnChange,this._expr_3,currVal_3)) {
+      this.renderer.setElementProperty(this._el_6,'href',this.viewUtils.sanitizer.sanitize(import27.SecurityContext.URL,currVal_3));
+      this._expr_3 = currVal_3;
+    }
+    const currVal_7:any = this._RouterLinkWithHref_9_3.href;
+    if (import4.checkBinding(throwOnChange,this._expr_7,currVal_7)) {
+      this.renderer.setElementProperty(this._el_9,'href',this.viewUtils.sanitizer.sanitize(import27.SecurityContext.URL,currVal_7));
+      this._expr_7 = currVal_7;
+    }
     this.detectViewChildrenChanges(throwOnChange);
   }
-  private _handle_click_0_0($event:any):boolean {
+  destroyInternal():void {
+    this._RouterLinkWithHref_6_3.ngOnDestroy();
+    this._RouterLinkActive_6_4.ngOnDestroy();
+    this._RouterLinkWithHref_9_3.ngOnDestroy();
+    this._RouterLinkActive_9_4.ngOnDestroy();
+    this._RouterOutlet_13_5.ngOnDestroy();
+  }
+  private _handle_click_6_0($event:any):boolean {
     this.markPathToRootAsCheckOnce();
-    const pd_0:any = ((<any>this.context.toggleHeading()) !== false);
+    const pd_0:any = ((<any>this._RouterLinkWithHref_6_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
+    return (true && pd_0);
+  }
+  private _handle_click_9_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this._RouterLinkWithHref_9_3.onClick($event.button,$event.ctrlKey,$event.metaKey)) !== false);
     return (true && pd_0);
   }
 }
 export function viewFactory_AppComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.AppComponent> {
-  if ((renderType_AppComponent === (null as any))) { (renderType_AppComponent = viewUtils.createRenderComponentType('',0,import8.ViewEncapsulation.None,styles_AppComponent,{})); }
+  if ((renderType_AppComponent === (null as any))) { (renderType_AppComponent = viewUtils.createRenderComponentType('',0,import8.ViewEncapsulation.Emulated,styles_AppComponent,{})); }
   return new _View_AppComponent0(viewUtils,parentInjector,declarationEl);
-}
-class _View_AppComponent1 extends import1.AppView<any> {
-  _el_0:any;
-  _text_1:any;
-  /*private*/ _expr_0:any;
-  constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
-    super(_View_AppComponent1,renderType_AppComponent,import6.ViewType.EMBEDDED,viewUtils,parentInjector,declarationEl,import7.ChangeDetectorStatus.CheckAlways);
-  }
-  createInternal(rootSelector:string):import2.AppElement {
-    this._el_0 = this.renderer.createElement((null as any),'h1',(null as any));
-    this._text_1 = this.renderer.createText(this._el_0,'',(null as any));
-    this._expr_0 = import7.UNINITIALIZED;
-    this.init(([] as any[]).concat([this._el_0]),[
-      this._el_0,
-      this._text_1
-    ]
-    ,([] as any[]),([] as any[]));
-    return (null as any);
-  }
-  detectChangesInternal(throwOnChange:boolean):void {
-    this.detectContentChildrenChanges(throwOnChange);
-    const currVal_0:any = import4.interpolate(1,'',this.parent.context.title,'');
-    if (import4.checkBinding(throwOnChange,this._expr_0,currVal_0)) {
-      this.renderer.setText(this._text_1,currVal_0);
-      this._expr_0 = currVal_0;
-    }
-    this.detectViewChildrenChanges(throwOnChange);
-  }
-}
-function viewFactory_AppComponent1(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  return new _View_AppComponent1(viewUtils,parentInjector,declarationEl);
 }

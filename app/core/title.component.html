@@ -1,0 +1,5 @@
+<button (click)="toggleHeading()">Toggle Heading</button>
+<h1 highlight *ngIf="showHeading">{{title}} {{subtitle}}</h1>
+<p *ngIf="user">
+  <i>Welcome, {{user}}</i>
+<p>

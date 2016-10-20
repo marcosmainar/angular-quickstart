@@ -10,10 +10,5 @@ import { Routes} from '@angular/router';
     styleUrls: ['app.component.css']
 })
 export class AppComponent {
-    showHeading = true;
-    title = 'Tour of Heroes';
-
-    toggleHeading() {
-        this.showHeading = !this.showHeading;
-    }
+    subtitle = '(v1)';
 }

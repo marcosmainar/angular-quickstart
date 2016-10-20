@@ -12,16 +12,21 @@ import * as import4 from '@angular/core/src/linker/view_utils';
 import * as import5 from '@angular/core/src/di/injector';
 import * as import6 from '@angular/core/src/linker/view_type';
 import * as import7 from '@angular/core/src/change_detection/change_detection';
-import * as import8 from '@angular/core/src/metadata/view';
-import * as import9 from '@angular/core/src/linker/component_factory';
-import * as import10 from '@angular/common/src/directives/ng_if';
-import * as import11 from '@angular/core/src/linker/template_ref';
-import * as import12 from '@angular/forms/src/directives/default_value_accessor';
-import * as import13 from '@angular/forms/src/directives/ng_model';
-import * as import14 from '@angular/forms/src/directives/ng_control_status';
-import * as import15 from '@angular/core/src/linker/element_ref';
-import * as import16 from '@angular/forms/src/directives/control_value_accessor';
-import * as import17 from '@angular/forms/src/directives/ng_control';
+import * as import8 from '../../app/hero.service';
+import * as import9 from '@angular/router/src/router_state';
+import * as import10 from '@angular/common/src/location/location';
+import * as import11 from '@angular/core/src/metadata/view';
+import * as import12 from '@angular/core/src/linker/component_factory';
+import * as import13 from './hero-detail.component.css.shim';
+import * as import14 from '@angular/common/src/directives/ng_if';
+import * as import15 from '@angular/core/src/linker/template_ref';
+import * as import16 from '@angular/forms/src/directives/default_value_accessor';
+import * as import17 from '@angular/forms/src/directives/ng_model';
+import * as import18 from '@angular/forms/src/directives/ng_control_status';
+import * as import19 from '../../app/contact/highlight.directive';
+import * as import20 from '@angular/core/src/linker/element_ref';
+import * as import21 from '@angular/forms/src/directives/control_value_accessor';
+import * as import22 from '@angular/forms/src/directives/ng_control';
 var renderType_HeroDetailComponent_Host:import0.RenderComponentType = (null as any);
 class _View_HeroDetailComponent_Host0 extends import1.AppView<any> {
   _el_0:any;
@@ -34,7 +39,7 @@ class _View_HeroDetailComponent_Host0 extends import1.AppView<any> {
     this._el_0 = this.selectOrCreateHostElement('my-hero-detail',rootSelector,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._el_0);
     var compView_0:any = viewFactory_HeroDetailComponent0(this.viewUtils,this.injector(0),this._appEl_0);
-    this._HeroDetailComponent_0_4 = new import3.HeroDetailComponent();
+    this._HeroDetailComponent_0_4 = new import3.HeroDetailComponent(this.parentInjector.get(import8.HeroService),this.parentInjector.get(import9.ActivatedRoute),this.parentInjector.get(import10.Location));
     this._appEl_0.initComponent(this._HeroDetailComponent_0_4,([] as any[]),compView_0);
     compView_0.create(this._HeroDetailComponent_0_4,this.projectableNodes,(null as any));
     this.init(([] as any[]).concat([this._el_0]),[this._el_0],([] as any[]),([] as any[]));
@@ -51,17 +56,17 @@ class _View_HeroDetailComponent_Host0 extends import1.AppView<any> {
   }
 }
 function viewFactory_HeroDetailComponent_Host0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<any> {
-  if ((renderType_HeroDetailComponent_Host === (null as any))) { (renderType_HeroDetailComponent_Host = viewUtils.createRenderComponentType('',0,import8.ViewEncapsulation.None,([] as any[]),{})); }
+  if ((renderType_HeroDetailComponent_Host === (null as any))) { (renderType_HeroDetailComponent_Host = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.None,([] as any[]),{})); }
   return new _View_HeroDetailComponent_Host0(viewUtils,parentInjector,declarationEl);
 }
-export const HeroDetailComponentNgFactory:import9.ComponentFactory<import3.HeroDetailComponent> = new import9.ComponentFactory<import3.HeroDetailComponent>('my-hero-detail',viewFactory_HeroDetailComponent_Host0,import3.HeroDetailComponent);
-const styles_HeroDetailComponent:any[] = ([] as any[]);
+export const HeroDetailComponentNgFactory:import12.ComponentFactory<import3.HeroDetailComponent> = new import12.ComponentFactory<import3.HeroDetailComponent>('my-hero-detail',viewFactory_HeroDetailComponent_Host0,import3.HeroDetailComponent);
+const styles_HeroDetailComponent:any[] = [import13.styles];
 var renderType_HeroDetailComponent:import0.RenderComponentType = (null as any);
 class _View_HeroDetailComponent0 extends import1.AppView<import3.HeroDetailComponent> {
   _anchor_0:any;
   /*private*/ _appEl_0:import2.AppElement;
   _TemplateRef_0_5:any;
-  _NgIf_0_6:import10.NgIf;
+  _NgIf_0_6:import14.NgIf;
   _text_1:any;
   /*private*/ _expr_0:any;
   constructor(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement) {
@@ -71,8 +76,8 @@ class _View_HeroDetailComponent0 extends import1.AppView<import3.HeroDetailCompo
     const parentRenderNode:any = this.renderer.createViewRoot(this.declarationAppElement.nativeElement);
     this._anchor_0 = this.renderer.createTemplateAnchor(parentRenderNode,(null as any));
     this._appEl_0 = new import2.AppElement(0,(null as any),this,this._anchor_0);
-    this._TemplateRef_0_5 = new import11.TemplateRef_(this._appEl_0,viewFactory_HeroDetailComponent1);
-    this._NgIf_0_6 = new import10.NgIf(this._appEl_0.vcRef,this._TemplateRef_0_5);
+    this._TemplateRef_0_5 = new import15.TemplateRef_(this._appEl_0,viewFactory_HeroDetailComponent1);
+    this._NgIf_0_6 = new import14.NgIf(this._appEl_0.vcRef,this._TemplateRef_0_5);
     this._text_1 = this.renderer.createText(parentRenderNode,'\n',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this.init(([] as any[]),[
@@ -83,8 +88,8 @@ class _View_HeroDetailComponent0 extends import1.AppView<import3.HeroDetailCompo
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import11.TemplateRef) && (0 === requestNodeIndex))) { return this._TemplateRef_0_5; }
-    if (((token === import10.NgIf) && (0 === requestNodeIndex))) { return this._NgIf_0_6; }
+    if (((token === import15.TemplateRef) && (0 === requestNodeIndex))) { return this._TemplateRef_0_5; }
+    if (((token === import14.NgIf) && (0 === requestNodeIndex))) { return this._NgIf_0_6; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -98,7 +103,7 @@ class _View_HeroDetailComponent0 extends import1.AppView<import3.HeroDetailCompo
   }
 }
 export function viewFactory_HeroDetailComponent0(viewUtils:import4.ViewUtils,parentInjector:import5.Injector,declarationEl:import2.AppElement):import1.AppView<import3.HeroDetailComponent> {
-  if ((renderType_HeroDetailComponent === (null as any))) { (renderType_HeroDetailComponent = viewUtils.createRenderComponentType('',0,import8.ViewEncapsulation.None,styles_HeroDetailComponent,{})); }
+  if ((renderType_HeroDetailComponent === (null as any))) { (renderType_HeroDetailComponent = viewUtils.createRenderComponentType('',0,import11.ViewEncapsulation.Emulated,styles_HeroDetailComponent,{})); }
   return new _View_HeroDetailComponent0(viewUtils,parentInjector,declarationEl);
 }
 class _View_HeroDetailComponent1 extends import1.AppView<any> {
@@ -118,13 +123,17 @@ class _View_HeroDetailComponent1 extends import1.AppView<any> {
   _text_13:any;
   _text_14:any;
   _el_15:any;
-  _DefaultValueAccessor_15_3:import12.DefaultValueAccessor;
+  _DefaultValueAccessor_15_3:import16.DefaultValueAccessor;
   _NG_VALUE_ACCESSOR_15_4:any[];
-  _NgModel_15_5:import13.NgModel;
+  _NgModel_15_5:import17.NgModel;
   _NgControl_15_6:any;
-  _NgControlStatus_15_7:import14.NgControlStatus;
+  _NgControlStatus_15_7:import18.NgControlStatus;
+  _HighlightDirective_15_8:import19.HighlightDirective;
   _text_16:any;
   _text_17:any;
+  _el_18:any;
+  _text_19:any;
+  _text_20:any;
   /*private*/ _expr_0:any;
   /*private*/ _expr_1:any;
   /*private*/ _expr_5:any;
@@ -155,13 +164,17 @@ class _View_HeroDetailComponent1 extends import1.AppView<any> {
     this._text_14 = this.renderer.createText(this._el_10,'\n        ',(null as any));
     this._el_15 = this.renderer.createElement(this._el_10,'input',(null as any));
     this.renderer.setElementAttribute(this._el_15,'placeholder','name');
-    this._DefaultValueAccessor_15_3 = new import12.DefaultValueAccessor(this.renderer,new import15.ElementRef(this._el_15));
+    this._DefaultValueAccessor_15_3 = new import16.DefaultValueAccessor(this.renderer,new import20.ElementRef(this._el_15));
     this._NG_VALUE_ACCESSOR_15_4 = [this._DefaultValueAccessor_15_3];
-    this._NgModel_15_5 = new import13.NgModel((null as any),(null as any),(null as any),this._NG_VALUE_ACCESSOR_15_4);
+    this._NgModel_15_5 = new import17.NgModel((null as any),(null as any),(null as any),this._NG_VALUE_ACCESSOR_15_4);
     this._NgControl_15_6 = this._NgModel_15_5;
-    this._NgControlStatus_15_7 = new import14.NgControlStatus(this._NgControl_15_6);
+    this._NgControlStatus_15_7 = new import18.NgControlStatus(this._NgControl_15_6);
+    this._HighlightDirective_15_8 = new import19.HighlightDirective(this.renderer,new import20.ElementRef(this._el_15));
     this._text_16 = this.renderer.createText(this._el_10,'\n    ',(null as any));
-    this._text_17 = this.renderer.createText(this._el_0,'\n',(null as any));
+    this._text_17 = this.renderer.createText(this._el_0,'\n\n    ',(null as any));
+    this._el_18 = this.renderer.createElement(this._el_0,'button',(null as any));
+    this._text_19 = this.renderer.createText(this._el_18,'Save',(null as any));
+    this._text_20 = this.renderer.createText(this._el_0,'\n',(null as any));
     this._expr_0 = import7.UNINITIALIZED;
     this._expr_1 = import7.UNINITIALIZED;
     var disposable_0:Function = this.renderer.listen(this._el_15,'ngModelChange',this.eventHandler(this._handle_ngModelChange_15_0.bind(this)));
@@ -175,6 +188,7 @@ class _View_HeroDetailComponent1 extends import1.AppView<any> {
     this._expr_9 = import7.UNINITIALIZED;
     this._expr_10 = import7.UNINITIALIZED;
     this._expr_11 = import7.UNINITIALIZED;
+    var disposable_3:Function = this.renderer.listen(this._el_18,'click',this.eventHandler(this._handle_click_18_0.bind(this)));
     this.init(([] as any[]).concat([this._el_0]),[
       this._el_0,
       this._text_1,
@@ -193,22 +207,27 @@ class _View_HeroDetailComponent1 extends import1.AppView<any> {
       this._text_14,
       this._el_15,
       this._text_16,
-      this._text_17
+      this._text_17,
+      this._el_18,
+      this._text_19,
+      this._text_20
     ]
     ,[
       disposable_0,
       disposable_1,
-      disposable_2
+      disposable_2,
+      disposable_3
     ]
     ,[subscription_0]);
     return (null as any);
   }
   injectorGetInternal(token:any,requestNodeIndex:number,notFoundResult:any):any {
-    if (((token === import12.DefaultValueAccessor) && (15 === requestNodeIndex))) { return this._DefaultValueAccessor_15_3; }
-    if (((token === import16.NG_VALUE_ACCESSOR) && (15 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_15_4; }
-    if (((token === import13.NgModel) && (15 === requestNodeIndex))) { return this._NgModel_15_5; }
-    if (((token === import17.NgControl) && (15 === requestNodeIndex))) { return this._NgControl_15_6; }
-    if (((token === import14.NgControlStatus) && (15 === requestNodeIndex))) { return this._NgControlStatus_15_7; }
+    if (((token === import16.DefaultValueAccessor) && (15 === requestNodeIndex))) { return this._DefaultValueAccessor_15_3; }
+    if (((token === import21.NG_VALUE_ACCESSOR) && (15 === requestNodeIndex))) { return this._NG_VALUE_ACCESSOR_15_4; }
+    if (((token === import17.NgModel) && (15 === requestNodeIndex))) { return this._NgModel_15_5; }
+    if (((token === import22.NgControl) && (15 === requestNodeIndex))) { return this._NgControl_15_6; }
+    if (((token === import18.NgControlStatus) && (15 === requestNodeIndex))) { return this._NgControlStatus_15_7; }
+    if (((token === import19.HighlightDirective) && (15 === requestNodeIndex))) { return this._HighlightDirective_15_8; }
     return notFoundResult;
   }
   detectChangesInternal(throwOnChange:boolean):void {
@@ -281,6 +300,11 @@ class _View_HeroDetailComponent1 extends import1.AppView<any> {
   private _handle_blur_15_2($event:any):boolean {
     this.markPathToRootAsCheckOnce();
     const pd_0:any = ((<any>this._DefaultValueAccessor_15_3.onTouched()) !== false);
+    return (true && pd_0);
+  }
+  private _handle_click_18_0($event:any):boolean {
+    this.markPathToRootAsCheckOnce();
+    const pd_0:any = ((<any>this.parent.context.save()) !== false);
     return (true && pd_0);
   }
 }

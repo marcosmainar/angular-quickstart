@@ -12,12 +12,14 @@ import { HeroService } from './hero.service';
 const routes : Routes = [
       {
         path: '',
-        redirectTo: '/dashboard',
+       //redirectTo: '/dashboard',
+        redirectTo: 'contact',
         pathMatch: 'full'
       },
       {
         path: 'heroes',
         component: HeroesComponent
+        // loadChildren: 'app/hero/hero.module#HeroModule'
       },
       {
         path: 'detail/:id',
@@ -27,6 +29,8 @@ const routes : Routes = [
         path: 'dashboard',
         component: DashboardComponent
       }
+      //,
+      //{ path: 'crisis', loadChildren: 'app/crisis/crisis.module#CrisisModule' },
 ];
 
 @NgModule({
