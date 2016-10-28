@@ -35,7 +35,7 @@ describe('ContactComponent', () => {
     testContacts.push(new Contact(1, "Test Contact"));
 
     TestBed.configureTestingModule({
-       imports:      [ FormsModule ],
+       imports:      [ FormsModule, SharedModule ],
        declarations: [ ContactComponent ],
        providers:    [ 
            ContactService, // inject real ContactService
@@ -96,7 +96,7 @@ describe('ContactComponent', () => {
       fixture.detectChanges();        // update view with quote
       let contactNameDebugElement = fixture.debugElement.query(By.css('h3'));
       let el = contactNameDebugElement.nativeElement;
-      expect(el.textContent).toBe(testContacts[0].name);
+      expect(el.textContent).toBe("Awesome " + testContacts[0].name);
     });
   }));
 
@@ -108,7 +108,7 @@ describe('ContactComponent', () => {
     fixture.detectChanges(); // update view with contact
     let contactNameDebugElement = fixture.debugElement.query(By.css('h3'));
     let el = contactNameDebugElement.nativeElement;
-    expect(el.textContent).toBe(testContacts[0].name);
+    expect(el.textContent).toBe("Awesome " + testContacts[0].name);
   }));
 
 });
